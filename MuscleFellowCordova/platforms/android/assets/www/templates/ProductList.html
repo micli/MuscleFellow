@@ -1,0 +1,13 @@
+﻿<ion-view view-title="肌肉伙伴">
+  <ion-content>
+      <div class="list">
+          <a ng-repeat="product in Products"
+             href="#/app/product/{{ product.productID }}"
+             class="item item-thumbnail-left">
+              <img ng-src="{{product.thumbnailImage }}"/>
+              <h2>{{ product.productName }}</h2>
+              <h3>￥{{ product.unitPrice }}元</h3>
+          </a>
+      </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,70 @@
+﻿@model MuscleFellow.Web.Models.ShipAddress.AddressCreationModel
+
+@{
+    ViewData["Title"] = "新建地址";
+}
+<div class="container">
+    <h2>新建地址</h2>
+
+    <form asp-action="Create">
+        <div class="form-horizontal">
+            <h4>ShipAddress</h4>
+            <hr />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">省份</label>
+                <div class="col-md-10">
+                    @Html.DropDownList("dpProvince", Model.Provinces, "==请选择==")
+                    <span asp-validation-for="@Model.ShipAddress.Province" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">城市</label>
+                <div class="col-md-10">
+                    @Html.DropDownList("dpCities", Model.Cities, "==请选择==")
+                    <span asp-validation-for="@Model.ShipAddress.City" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">详细地址</label>
+                <div class="col-md-10">
+                    <input asp-for="@Model.ShipAddress.Address" class="form-control" />
+                    <span asp-validation-for="@Model.ShipAddress.Address" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">电话</label>
+                <div class="col-md-10">
+                    <input asp-for="@Model.ShipAddress.PhoneNumber" class="form-control" />
+                    <span asp-validation-for="@Model.ShipAddress.PhoneNumber" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">收货人姓名</label>
+                <div class="col-md-10">
+                    <input asp-for="@Model.ShipAddress.Receiver" class="form-control" />
+                    <span asp-validation-for="@Model.ShipAddress.Receiver" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">邮编</label>
+                <div class="col-md-10">
+                    <input asp-for="@Model.ShipAddress.ZipCode" class="form-control" />
+                    <span asp-validation-for="@Model.ShipAddress.ZipCode" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="新建地址" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    </form>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        @{
+            <script src="~/js/ShipAddress.js"></script>
+        }
+    }
+</div>

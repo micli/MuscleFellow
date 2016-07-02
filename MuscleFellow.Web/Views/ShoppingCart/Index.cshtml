@@ -1,0 +1,72 @@
+﻿@using MuscleFellow.Models
+@model List<MuscleFellow.Models.CartItem>
+@section Scripts {
+    @{
+        <script src="~/js/CommonUI.js"></script>
+        <script src="~/js/AjaxShoppingCart.js"></script>
+    }
+}
+<div class="container">
+    <h2>
+        购物车
+    </h2>
+    <table class="table table-bordered table-responsive table-hover table-striped">
+        <thead>
+            <tr>
+                <th>
+                    <input type="checkbox" id="chkall" class="checkbox" onchange="AjaxShoppingCart.CheckAllItems();" />
+                </th>
+                <th>
+                    商品
+                </th>
+                <th>
+                    单价
+                </th>
+                <th>
+                    数量
+                </th>
+                <th>
+                    小计
+                </th>
+                <th>
+                    操作
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (null != Model)
+            {
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td style="vertical-align:middle">
+                            <input type="checkbox" id="@item.CartID" class="checkbox-inline"  />
+                        </td>
+                        <td style="vertical-align:middle">
+                            <img src="@item.ThumbImagePath" class="img-thumbnail" style="width:60px;height:60px" alt="" />
+                            @Html.DisplayFor(modelItem => item.ProductName)
+                        </td>
+                        <td style="vertical-align:middle">
+                            @Html.DisplayFor(modelItem => item.UnitPrice)
+                        </td>
+                        <td style="vertical-align:middle">
+                            @Html.DisplayFor(modelItem => item.Quantity)
+                        </td>
+                        <td style="vertical-align:middle">
+                            @Html.DisplayFor(modelItem => item.SubTotal)
+                        </td>
+                        <td style="vertical-align:middle">
+                            <a asp-action="Edit" asp-route-id="@item.CartID">修改</a> |
+                            <a asp-action="Delete" asp-route-id="@item.CartID">删除</a>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+    <hr />
+    <div class="row pull-right">
+        <a class="btn btn-default" href="/home"><< 继续购物</a>
+        <a class="btn btn-danger" onclick="AjaxShoppingCart.AddCartItems2OrderConfirm('/Orders/Confirm');">去结算</a>
+    </div>
+</div>

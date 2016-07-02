@@ -1,0 +1,53 @@
+﻿@model IEnumerable<MuscleFellow.Models.Order>
+
+@{
+    ViewData["Title"] = "历史订单";
+}
+<div class="container">
+    <h2>历史订单</h2>
+
+    <table class="table table-responsive table-striped">
+        <thead>
+            <tr>
+                <th>
+                    送货地址
+                </th>
+                <th>
+                    下单时间
+                </th>
+                <th>
+                    订单状态
+                </th>
+                <th>
+                    金额
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderStatus)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TotalPrice)
+                    </td>
+                    <td>
+                        <a href="/orders/details?orderid=@item.OrderID">详细信息</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="row">
+        <div class="pull-right"><a href="/Home"><< 继续购物</a></div>
+    </div>
+</div>

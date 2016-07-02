@@ -1,0 +1,12 @@
+﻿<ion-view view-title="购物车">
+  <ion-content>
+      <ion-list>
+          <ion-item ng-repeat="cart in CartItems" class="item item-thumbnail-left">
+              <img ng-src="{{cart.thumbImagePath }}" />
+              <h2>{{ cart.productName }}</h2>
+              <h3>数量：{{cart.quantity}}</h3>
+              <h3>￥{{ cart.subTotal }}元</h3>
+          </ion-item>
+      </ion-list>
+  </ion-content>
+</ion-view>

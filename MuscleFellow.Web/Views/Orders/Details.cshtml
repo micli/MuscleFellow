@@ -1,0 +1,56 @@
+﻿@model MuscleFellow.Models.Order
+
+@{
+    ViewData["Title"] = "订单详细信息";
+}
+<div class="container">
+    <h2>送货地址：</h2>
+    <h4>@Model.Address</h4>
+    <div class="row">
+        <table class="table table-responsive table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        商品
+                    </th>
+                    <th>
+                        单价
+                    </th>
+                    <th>
+                        数量
+                    </th>
+                    <th>
+                        小计
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (null != Model)
+                {
+                    @foreach (var item in Model.OrderItems)
+                    {
+                        <tr>
+                            <td>
+                                <img src="@item.ThumbImagePath" class="img-thumbnail" style="width:60px;height:60px" alt="" />
+                                @Html.DisplayFor(modelItem => item.ProductName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.UnitPrice)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Quantity)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SubTotal)
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row">
+        <div class="pull-right"><a href="/Orders"><< 继续购物</a></div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget id="com.ionicframework.ionicsidemenu" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>MuscleFellowCordova</name>
+  <description>
+        An Ionic Framework and Cordova project.
+    </description>
+  <author email="you@example.com" href="http://example.com.com/">
+      Your Name Here
+    </author>
+  <content src="index.html" />
+  <access origin="*" />
+  <preference name="webviewbounce" value="false" />
+  <preference name="UIWebViewBounce" value="false" />
+  <preference name="DisallowOverscroll" value="true" />
+  <preference name="android-minSdkVersion" value="16" />
+  <preference name="BackupWebStorage" value="none" />
+  <feature name="StatusBar">
+    <param name="ios-package" onload="true" value="CDVStatusBar" />
+  </feature>
+  <preference name="KeepRunning" value="True" />
+  <preference name="ShowTitle" value="True" />
+  <preference name="InAppBrowserStorageEnabled" value="True" />
+  <preference name="SuppressesIncrementalRendering" value="True" />
+  <preference name="windows-target-version" value="10.0" />
+  <plugin name="cordova-plugin-device" spec="~1.1.1" />
+  <plugin name="cordova-plugin-console" spec="~1.0.2" />
+  <plugin name="cordova-plugin-whitelist" spec="~1.2.1" />
+  <plugin name="cordova-plugin-statusbar" spec="~2.1.0" />
+  <plugin name="ionic-plugin-keyboard" spec="~1.0.8" />
+</widget>

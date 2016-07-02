@@ -1,0 +1,27 @@
+﻿@using MuscleFellow.Models
+@using MuscleFellow.Web.Models
+
+@{
+    ViewData["Title"] = @Model.Brand.BrandName;
+}
+<div class="row">
+    <div class="bg-info row">
+        <h4>品牌介绍</h4>
+    </div>
+    <img src="@Model.Brand.Logo" class="img-thumbnail col-lg-4" />
+    <text>@Model.Brand.Description</text>
+</div>
+<div class="row">
+    <div class="bg-info row">
+        <h4>热卖商品</h4>
+    </div>
+    @foreach (Product p in Model.Products)
+    {
+        <div class="col-md-2 product-thumbnial">
+            <a href="/Product/@p.ProductID">
+                <img src="@p.ThumbnailImage" alt="@p.Description" style="width:100%;height:100%" />
+                <p style="text-align:center">@p.ProductName</p>
+            </a>
+        </div>
+    }
+</div>

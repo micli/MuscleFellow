@@ -1,0 +1,53 @@
+﻿<ion-view view-title="商品详情">
+    <ion-content ng-controller="ProductDetailsCtrl">
+        <h4>{{productData.ProductName}}</h4>
+        <div class="row">
+            <dl class="dl-horizontal">
+                <dt>
+                    描述：
+                </dt>
+                <dd>
+                    {{productData.description}}
+                </dd>
+                <dt>
+                    长：
+                </dt>
+                <dd>
+                    {{productData.length}}&nbsp;{{productData.unitOfLength}}
+                </dd>
+                <dt>
+                    宽：
+                </dt>
+                <dd>
+                    {{productData.width}}&nbsp;{{productData.unitOfLength}}
+                </dd>
+                <dt>
+                    高：
+                </dt>
+                <dd>
+                    {{productData.height}}&nbsp;{{productData.unitOfLength}}
+                </dd>
+                <dt>
+                    重量：
+                </dt>
+                <dd>
+                    {{productData.weight}}&nbsp;{{productData.unitOfWeight}}
+                </dd>
+            </dl>
+        </div>
+        <div class="list">
+            <div class="item item-image" ng-repeat="img in productData.images" >
+                <img ng-src="{{img.relativeUrl }}">
+            </div>
+
+        </div>
+    </ion-content>
+    <ion-footer-bar align-title="left" class="bar-assertive">
+        <div class="buttons" ng-click="OnAddShoppingCart(productData.productID)">
+            <button class="button">存放到购物车</button>
+        </div>
+        <div class="buttons pull-right button-calm" ng-click="OnSubmitOrder(productData.productID)">
+            <button class="button">直接购买</button>
+        </div>
+    </ion-footer-bar>
+</ion-view>

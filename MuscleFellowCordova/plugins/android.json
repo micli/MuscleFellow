@@ -1,0 +1,27 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.ionicframework.ionicsidemenu"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.ionicframework.ionicsidemenu"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.ionicframework.ionicsidemenu"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.ionicframework.ionicsidemenu"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.ionicframework.ionicsidemenu"
+        }
+    },
+    "dependent_plugins": {}
+}

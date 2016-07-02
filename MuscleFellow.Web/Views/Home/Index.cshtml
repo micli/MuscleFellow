@@ -1,0 +1,38 @@
+﻿@using MuscleFellow.Models
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="container">
+    <div class="row">
+        <img src="~/Assets/theme2.png" class="img-thumbnail" style="padding:0px;margin:0px;border:none;" alt=""/>
+    </div>
+    <div class="row">
+        <div class="bg-warning row">
+            <h4>品牌分类</h4>
+        </div>
+        @foreach (Brand b in Model.Brands)
+        {
+            <div class="col-md-2 product-thumbnial">
+                <a href="/Brands/@b.BrandID">
+                    <img src="@b.Logo" alt="@b.Description" style="width:100%;height:60px" />
+                    <p style="text-align:center">@b.BrandName</p>
+                </a>
+            </div>
+        }
+    </div>
+    <div class="row">
+        <div class="bg-info row">
+            <h4>热卖商品</h4>
+        </div>
+        @foreach (Product p in Model.Products)
+        {
+            <div class="col-lg-2 product-thumbnial">
+                <a href="/Product/@p.ProductID">
+                    <img src="@p.ThumbnailImage" alt="@p.Description" style="width:100%;height:100%" />
+                    <p class="text_overflow">@p.ProductName</p>
+                </a>
+            </div>
+        }
+    </div>
+</div>

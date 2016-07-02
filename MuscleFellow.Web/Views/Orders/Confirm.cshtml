@@ -1,0 +1,72 @@
+﻿@using MuscleFellow.Models
+@using MuscleFellow.Web.Models.Orders
+@model OrderConfirmModel
+
+@section Scripts {
+    @{
+        <script src="~/js/Order.js"></script>
+    }
+}
+<div class="container">
+    <h4>确认订单信息</h4>
+    <hr />
+    <form asp-action="Create">
+        <div class="row">
+            可用的收货地址:<div class="pull-right"><a href="/ShipAddress/Index" target="_blank">地址维护</a></div>
+            @Html.DropDownList("dpShipAddress", Model.ShipAddresses, new { @class = "dropdown", @style = "width:90%" })
+        </div>
+        <hr />
+        <div class="row">
+            <table class="table table-responsive table-striped">
+                <thead>
+                    <tr>
+                        <th>
+                            商品
+                        </th>
+                        <th>
+                            单价
+                        </th>
+                        <th>
+                            数量
+                        </th>
+                        <th>
+                            小计
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (null != Model)
+                    {
+                        @foreach (var item in Model.OrderDetails)
+                        {
+                            <tr>
+                                <td>
+                                    <img src="@item.ThumbImagePath" class="img-thumbnail" style="width:60px;height:60px" alt="" />
+                                    @Html.DisplayFor(modelItem => item.ProductName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UnitPrice)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Quantity)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SubTotal)
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+        <hr />
+        <div class="row pull-right">
+            <input id="addressCtrl" name="addressCtrl" type="hidden" />
+            <input id="IDListCtrl" name="IDListCtrl" type="hidden" value="@Model.IDList" />
+            <input id="prodIdCtrl" name="prodIdCtrl" type="hidden" value="@Model.ProductID"/>
+            <input id="amountCtrl" name="amountCtrl" type="hidden" value="@Model.ProductAmount"/>
+            <h4 style="color:red">合计： @Model.TotalAmount</h4>
+            <input id="btnSubmitOrder" name="btnSubmitOrder" type="submit" value="提交订单" class="btn btn-danger" onclick="OnSubmitOrder()" />
+        </div>
+       </form>
+</div>

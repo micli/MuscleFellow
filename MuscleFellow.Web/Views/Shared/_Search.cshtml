@@ -1,0 +1,35 @@
+﻿
+
+<script type="text/javascript">
+    function onKeyDown(event) {
+        var e = event || window.event || arguments.callee.caller.arguments[0];
+        if (e && e.keyCode == 13) {
+            var keyword = $("#keyword").val();
+            if (keyword.length == 0) {
+                $("#btnSearch").click();
+            }
+        }
+
+    }
+    function GotoSearch() {
+        var keyword = $("#keyword").val();
+        if (keyword.length > 0) {
+            location.href = "/Search?keyword=" + encodeURIComponent(keyword);
+        }
+        return;
+    }
+</script>  
+<div class="nav navbar-nav navbar-text col-sm-4">
+    <div class="input-group">
+        <table class="table-responsive">
+            <tr>
+                <td>
+                    <input id="txtKeyword" type="text" class="text" placeholder="搜索商品" onkeydown="onKeyDown(event)" />
+                </td>
+                <td>
+                    &nbsp;<a id="btnSearch" class="glyphicon glyphicon-search" onclick="GotoSearch()"></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

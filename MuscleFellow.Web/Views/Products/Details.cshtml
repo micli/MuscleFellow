@@ -1,0 +1,89 @@
+﻿@using MuscleFellow.Models
+@model MuscleFellow.Models.Product
+
+@{
+    ViewData["Title"] = "产品详情";
+}
+<div class="container">
+    <h2>@Model.ProductName</h2>
+    @section Scripts {
+        @{
+            <script src="~/js/CommonUI.js"></script>
+            <script src="~/js/AjaxShoppingCart.js"></script>
+            <script src="~/js/product.js"></script>
+        }
+    }
+        <div>
+            <hr />
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img src="@Model.ThumbnailImage" alt="" class="img-responsive" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <h4>@Model.ProductName</h4>
+                    </div>
+                    <div class="row">
+                        <h4>价格￥@Model.UnitPrice 元</h4>
+                    </div>
+                    <br />
+                    <div class="row">
+                        购买数量： @Html.TextBox("spinner", 1, new { @class = "ui-spinner", style = "Width:40px" })
+                    </div>
+                    <br />
+                    <br />
+                    <div class="row">
+                        <a id="add-to-cart-button" class="btn btn-default" data-productid="@Model.ProductID" 
+                           onclick="AjaxShoppingCart.AddProduct2Cart_Details('/ShoppingCart/AddToShoppingCart?ProductID=@Model.ProductID&Amount=' + GetAmount());">添加到购物车</a>
+                        <a id="add-to-cart-button" class="btn btn-danger" data-productid="@Model.ProductID"
+                           onclick="AjaxShoppingCart.AddProdcut2Order('/Orders/Confirm?ProductID=@Model.ProductID&Amount=' + GetAmount());">直接购买</a>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <dl class="dl-horizontal">
+                    <dt>
+                        描述：
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Description)
+                    </dd>
+                    <dt>
+                        长：
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Length)&nbsp;@Model.UnitOfLength
+                    </dd>
+                    <dt>
+                        宽：
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Width)&nbsp;@Model.UnitOfLength
+                    </dd>
+                    <dt>
+                        高：
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Height)&nbsp;@Model.UnitOfLength
+                    </dd>
+                    <dt>
+                        重量：
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Weight)&nbsp;@Model.UnitOfWeight
+                    </dd>
+                </dl>
+            </div>
+            <div class="row center-block">
+                @foreach (ProductImage img in Model.Images)
+                {
+                    <img src="@img.RelativeUrl" class="img-responsive" alt="" />
+                }
+            </div>
+        </div>
+</div>

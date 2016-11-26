@@ -9,15 +9,8 @@ using MuscleFellow.Data;
 using MuscleFellow.Data.Interfaces;
 using MuscleFellow.Data.Repositories;
 using MuscleFellow.Models;
-using MuscleFellow.Web.Data;
-using MuscleFellow.Web.Models;
 using MuscleFellow.Web.Services;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Caching;
 
 namespace MuscleFellow.Web
 {

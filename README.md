@@ -19,7 +19,7 @@ MuscleFellow 的网站项目MuscleFellow.Web 和MuscleFellow的Web API 项目Mus
 ### Apache Cordova 开发
 演示了使用Ionic 框架配合JavaScript 脚本实现一款基于Cordova 技术的移动应用，项目可以直接编译成Android 使用的apk 应用程序包。通过配置，也可将项目编译成iOS 使用的ipa。
 ### Xamarin.Forms 开发
-演示了使用Xamarin.Forms 实现一个自定义的ListView 来展示MuscleFellow 的上平，并支持使用Xamarin 提供的iOS 模拟器在Windows 上进行应用程序调试。
+演示了使用Xamarin.Forms 实现一个自定义的ListView 来展示MuscleFellow 的产品，并支持使用Xamarin 提供的iOS 模拟器在Windows 上进行应用程序调试。
 
 ## 如何购买《微软开源跨平台移动开发实践》这本书？
 ### 天猫购书: [请点击这里](https://list.tmall.com/search_product.htm?q=%E5%BE%AE%E8%BD%AF%E5%BC%80%E6%BA%90%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5&type=p&vmarket=&spm=875.7931836%2FA.a2227oh.d100&from=mallfp..pc_1_searchbutton)

@@ -25,7 +25,7 @@ MuscleFellow 的网站项目MuscleFellow.Web 和MuscleFellow的Web API 项目Mus
 ### 天猫购书: [请点击这里](https://list.tmall.com/search_product.htm?q=%E5%BE%AE%E8%BD%AF%E5%BC%80%E6%BA%90%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5&type=p&vmarket=&spm=875.7931836%2FA.a2227oh.d100&from=mallfp..pc_1_searchbutton)
 ### 京东购书: [请点击这里](http://search.jd.com/Search?keyword=%E5%BE%AE%E8%BD%AF%E5%BC%80%E6%BA%90%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5&enc=utf-8&wq=%E5%BE%AE%E8%BD%AF%E5%BC%80%E6%BA%90%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5&pvid=3039ekwi.ihvhms)
 
-### 书籍目录如下:
+## 书籍目录如下:
 1. 微软“云+端”站略
 2. 开源跨平台的ASP.NET Core
 3. 开源跨平台的设备开发
@@ -38,4 +38,12 @@ MuscleFellow 的网站项目MuscleFellow.Web 和MuscleFellow的Web API 项目Mus
 10. AngularJS 和Ionic
 11. 使用Cordova开发跨平台移动应用
 12. 使用Xamarin开发跨平台移动应用
+
+## 在Visual Stdio 2017(或更高版本上)运行该项目, 需要执行的步骤:
+1. 下载源代码, 并用Visual Studio打开
+2. 创建数据库, 修改以下位置的数据库连接字符:
+- 2.1 "MuscleFellow.Web"项目 - "appsettings"文件 - "ConnectionStrings" - "DefaultConnection:**更改这里的字符串**"
+- 2.2 "MuscleFellow.API"项目 - "appsettings"文件 - "ConnectionStrings" - "DefaultConnection:**更改这里的字符串**"
+3. 下载[.NET Core 1.1](https://dotnet.microsoft.com/download/dotnet-core), 并解压到该目录下:"C:\Program Files\dotnet"
+4. VIsual Studio中点击"调式"-"开始执行"(Ctrl+F5)
 
